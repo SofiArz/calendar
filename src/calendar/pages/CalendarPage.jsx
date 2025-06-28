@@ -3,7 +3,7 @@ import { Calendar } from 'react-big-calendar'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 
 import { addHours } from 'date-fns'
-import { CalendarEvent, Navbar } from '../'
+import { CalendarEvent, CalendarModal, Navbar } from '../'
 
 import { localizer } from '../../helpers'
 
@@ -60,6 +60,7 @@ export const CalendarPage = () => {
                 onDoubleClickEvent={onDoubleClick}
                 onSelectEvent={onSelect}
             />
+            <CalendarModal></CalendarModal>
         </>
     )
 }
