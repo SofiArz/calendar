@@ -1,25 +1,13 @@
-import { addHours } from 'date-fns'
 import { useState } from 'react'
 import { Calendar } from 'react-big-calendar'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 import { CalendarEvent, CalendarModal, Navbar } from '../'
 import { localizer } from '../../helpers'
-import { useUiStore } from '../../hooks'
-
-const events = [{
-    title: 'Study time',
-    notes: '',
-    start: new Date(),
-    end: addHours(new Date(), 6),
-    bgColor: '#fafafa',
-    users: {
-        _id: '123',
-        name: 'Sofia'
-    }
-}]
+import { useCalendarStore, useUiStore } from '../../hooks'
 
 export const CalendarPage = () => {
     const { openDateModal } = useUiStore()
+    const { events } = useCalendarStore()
     const [view, setView] = useState(localStorage.getItem('lastView') || 'month')
     const eventStyleGetter = (event, start, end, isSelected) => {
         const style = {
