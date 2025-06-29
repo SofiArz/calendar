@@ -1,11 +1,10 @@
+import { addHours } from 'date-fns'
 import { useState } from 'react'
 import { Calendar } from 'react-big-calendar'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
-
-import { addHours } from 'date-fns'
 import { CalendarEvent, CalendarModal, Navbar } from '../'
-
 import { localizer } from '../../helpers'
+import { useUiStore } from '../../hooks'
 
 const events = [{
     title: 'Study time',
@@ -20,6 +19,7 @@ const events = [{
 }]
 
 export const CalendarPage = () => {
+    const { openDateModal } = useUiStore()
     const [view, setView] = useState(localStorage.getItem('lastView') || 'month')
     const eventStyleGetter = (event, start, end, isSelected) => {
         const style = {
@@ -31,7 +31,7 @@ export const CalendarPage = () => {
         return { style }
     }
 
-    const onDoubleClick = (event) => { console.log({ doubleClick: event }) }
+    const onDoubleClick = (event) => { openDateModal() }
     const onSelect = (event) => { console.log({ click: event }) }
     const onViewChange = (event) => {
         localStorage.setItem('lastView', event)
