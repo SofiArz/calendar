@@ -1,3 +1,4 @@
+export * from './components/FabDelete'
 export * from './components/FabAddNew'
 export * from './components/CalendarEvent'
 export * from './components/CalendarModal'
