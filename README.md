@@ -1,12 +1,65 @@
-# React + Vite
+# 📅 MERN Calendar Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modular calendar application built with **React 19**, **Redux Toolkit**, and **React Big Calendar**. This repository implements the complete **frontend logic**, including event management, modals, routing, and localization.
 
-Currently, two official plugins are available:
+🔗 Backend repo with JWT authentication logic: [calendar-backend](https://github.com/SofiArz/calendar-backend)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-  Login UI with React Router integration
+-  Route protection and public/private navigation
+-  Calendar using `react-big-calendar` with custom events
+-  Event creation/editing modal
+-  Datepicker with Spanish localization
+-  Redux Toolkit for state management (calendar & UI)
+-  Form validations and SweetAlert2 confirmations
+-  Modular folder structure with reusable hooks and components
+
+---
+
+## 📸 Demo
+
+> _Deployment link will be added shortly._
+
+---
+
+## ⚙️ Tech Stack
+
+| Tool/Library           | Purpose                          |
+|------------------------|----------------------------------|
+| React 19               | UI Framework                     |
+| Redux Toolkit          | Global state management          |
+| React Router DOM       | Routing                          |
+| React Big Calendar     | Calendar component               |
+| React Modal            | Modal dialogs                    |
+| React Datepicker       | Date selection                   |
+| SweetAlert2            | User-friendly alerts             |
+| Vite                   | Development/build tool           |
+| ESLint                 | Linting and code quality         |
+
+---
+
+## 📁 Project Structure
+
+```text
+src/
+│
+├── auth/               # Login page and auth layout
+│   └── pages/
+│       └── LoginPage.jsx
+│
+├── calendar/           # Core calendar features
+│   ├── components/     # UI components like modals, buttons
+│   ├── pages/          # CalendarPage.jsx
+│   └── helpers/        # Localization and utilities
+│
+├── hooks/              # Custom hooks for Redux slices
+│
+├── router/             # App routing logic
+│
+├── store/              # Redux slices (calendar, UI)
+│
+├── CalendarApp.jsx     # Main app entry
+└── index.js            # Vite entry point
